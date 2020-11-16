@@ -1,0 +1,44 @@
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+#container{
+  width: 90%;
+  height: 500%;
+  border: solid black 1px;
+  border-radius: 0.75em;
+  margin-top: 1%;
+
+
+}
+
+#drag-1, #drag-2,#drag-3 {
+  width: 25%;
+  min-height: 4.5em;
+  margin: 1rem 0 0 1rem;
+  color: white;
+  border-radius: 0.75em;
+  padding: 4%;
+  touch-action: none;
+  user-select: none;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+
+}
+
+#drag-1{
+  background-color: #6495ED;
+}
+
+#drag-2{
+  background-color: #8B008B;
+}
+
+#drag-3{
+  background-color: #32CD32;
+}
+
+.large{
+  font-size: 62px;
+  float:right;
+}
