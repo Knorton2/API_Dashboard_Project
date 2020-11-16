@@ -10,3 +10,21 @@ fetch("https://jokeapi-v2.p.rapidapi.com/joke/Any?format=json&blacklistFlags=nsf
 .then(x => joke = x)
 .then(data => document.getElementById("setup").innerHTML =joke.setup)
 .then(data => document.getElementById("punchline").innerHTML =joke.delivery)
+
+
+function turnoffjoke() {
+  var x = document.getElementById("drag-3");
+	var y = document.getElementById("jokeToggle");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+	if (x.style.display === "none") {
+		y.style.color = "red";
+	} else {
+		y.style.color = "#66ff69";
+	}
+
+}

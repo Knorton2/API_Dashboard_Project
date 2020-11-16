@@ -7,13 +7,26 @@ body{
   color: white;
 }
 
+#jokeToggle{
+  color: #66ff69;
+}
+
+#weatherToggle{
+  color: #66ff69;
+}
+
+#covidToggle{
+  color: #66ff69;
+}
+
 #container{
-  width: 90%;
+  width: 84%;
   height: 100%;
   border: solid #d1d1d1 1px;
   border-radius: 0.75em;
   margin-top: 1%;
   margin-left: 15%;
+  background-color: #e6e6e6;
 }
 
 #drag-1, #drag-2,#drag-3 {

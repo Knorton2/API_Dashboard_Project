@@ -11,6 +11,23 @@ fetch("https://covid-19-v1.p.rapidapi.com/v1/all", {
 .then(data => document.getElementById("coviddeaths").innerHTML ="Global deaths today are "+ covid.todayDeaths)
 .then(data => document.getElementById("covidrecovered").innerHTML ="Global recovered cases today are "+ covid.todayRecovered)
 
+function turnoffcovid() {
+  var x = document.getElementById("drag-2");
+	var y = document.getElementById("covidToggle");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+	if (x.style.display === "none") {
+		y.style.color = "red";
+	} else {
+		y.style.color = "#66ff69";
+	}
+
+}
+
 
 
 //API LINK https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/endpoints
