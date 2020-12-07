@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   <head>
 
     <meta charset="utf-8">
@@ -11,6 +11,10 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
+    <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.js"></script>
+
   </head>
 
 
@@ -84,9 +88,9 @@
       </nav>
 
 
-<div id="container">
+<div id="container" class="grid">
 
-    <div id="drag-1" class="draggable">
+    <div id="drag-1" class="grid-item">
       <h3> Weather API </h3><i class="fas fa-cloud-sun large"></i>
 
       <p id="weathertype"></p>
@@ -95,7 +99,7 @@
     </div>
 
 
-    <div id="drag-2" class="draggable">
+    <div id="drag-2" class="grid-item">
       <h3> Covid Worldwide API </h3><i class="fas fa-viruses large"></i>
       <p id="covidconfirmed"></p>
       <p id="coviddeaths"></p>
@@ -103,26 +107,24 @@
     </div>
 
 
-    <div id="drag-3" class="draggable">
+    <div id="drag-3" class="grid-item">
       <h3>Bad Jokes API </h3><i class="far fa-grin-beam large"></i>
       <p id="setup"></p>
       <p id="punchline"></p>
     </div>
 
-    <div id="drag-4" class="draggable">
+    <div id="drag-4" class="grid-item">
       <h3>Random Stylish Picture API </h3><i class="far fa-grin-beam large"></i>
       <img id="picture" src="https://picsum.photos/300" alt="">
       <button class="spacing btn btn-primary" onclick="changeimage()"  type="button" name="button">Load New Picture</button>
     </div>
-
-
 
 </div>
 
 
 
 <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-<script src="drag.js"></script>
+
 <script src="apis/weatherAPI.js"></script>
 <script src="apis/covidAPI.js"></script>
 <script src="apis/stocksAPI.js"></script>
@@ -131,16 +133,16 @@
 <script src="snowstorm.js"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
-
+<script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
   </body>
 
-
+<script src="draggable.js"></script>
 
 
   </html>
