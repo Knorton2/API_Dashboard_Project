@@ -28,6 +28,56 @@ function turnoffcovid() {
 
 }
 
+function turnofftwitter() {
+  var x = document.getElementById("drag-8");
+	var y = document.getElementById("twitterToggle");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 
+	if (x.style.display === "none") {
+		y.style.color = "red";
+	} else {
+		y.style.color = "#66ff69";
+	}
+
+}
+
+
+function turnofftodo() {
+  var x = document.getElementById("drag-7");
+	var y = document.getElementById("ToDoToggle");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+	if (x.style.display === "none") {
+		y.style.color = "red";
+	} else {
+		y.style.color = "#66ff69";
+	}
+
+}
+
+function turnoffcalendar() {
+  var x = document.getElementById("drag-6");
+	var y = document.getElementById("calendarToggle");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+	if (x.style.display === "none") {
+		y.style.color = "red";
+	} else {
+		y.style.color = "#66ff69";
+	}
+
+}
 
 //API LINK https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/endpoints

@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   <head>
 
     <meta charset="utf-8">
     <title>API Prototyping</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
+    <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.js"></script>
 
   </head>
 
@@ -22,11 +27,12 @@
       <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
           <div class="sidebar-brand">
-            <h1 class="white">API Dashboard v1.0</h1>
+            <h1 class="white">API Dashboard v1.5</h1>
 
           </div>
           <div class="sidebar-header">
-            <p class="white">API widgets are draggable</p>
+            <p class="white">Verison focused on intergrating popular internet apps.</p>
+            <p class="white">Apps such as Discord, Spotify, Youtube & many more.</p>
           </div>
 
           <div class="sidebar-menu">
@@ -53,6 +59,21 @@
                     <li>
                       <a id="jokeToggle" href="#" onclick="turnoffjoke()">Joke API</a>
                     </li>
+                    <li>
+                      <a id="picToggle" href="#" onclick="turnoffpic()">Picture API</a>
+                    </li>
+                    <li>
+                      <a id="spotifyToggle" href="#" onclick="turnoffspotify()">Spotify</a>
+                    </li>
+                    <li>
+                      <a id="twitterToggle" href="#" onclick="turnofftwitter()">Twitter</a>
+                    </li>
+                    <li>
+                      <a id="ToDoToggle" href="#" onclick="turnofftodo()">To-Do list</a>
+                    </li>
+                    <li>
+                      <a id="calendarToggle" href="#" onclick="turnoffcalendar()">Football Calendar</a>
+                    </li>
                   </ul>
                 </div>
               </li>
@@ -67,6 +88,11 @@
                   <span>GitHub Repository</span>
                 </a>
               </li>
+              <li>
+                <a class="xmasbg" onclick="snowStorm.toggleSnow()" href="#">
+                  <i class="fas fa-snowflake"></i>
+                  <span class="christmas">Toggle Snow</span>
+                </a>
 
             </ul>
           </div>
@@ -76,10 +102,10 @@
       </nav>
 
 
-<div id="container">
+<div id="container" class="grid">
 
-    <div id="drag-1" class="draggable">
-      <h3> Weather API </h3><i class="fas fa-cloud-sun large"></i>
+    <div id="drag-1" class="grid-item">
+      <h3 class="apiHeader"> Weather API </h3><i class="fas fa-cloud-sun large"></i>
 
       <p id="weathertype"></p>
       <p id="timezone"></p>
@@ -87,44 +113,98 @@
     </div>
 
 
-    <div id="drag-2" class="draggable">
-      <h3> Covid Worldwide API </h3><i class="fas fa-viruses large"></i>
+    <div id="drag-2" class="grid-item">
+      <h3 class="apiHeader"> Covid Worldwide API </h3><i class="fas fa-viruses large"></i>
       <p id="covidconfirmed"></p>
       <p id="coviddeaths"></p>
       <p id="covidrecovered"></p>
     </div>
 
 
-    <div id="drag-3" class="draggable">
-      <h3>Bad Jokes API </h3><i class="far fa-grin-beam large"></i>
+    <div id="drag-3" class="grid-item">
+      <h3 class="apiHeader">Bad Jokes API </h3><i class="far fa-grin-beam large"></i>
       <p id="setup"></p>
       <p id="punchline"></p>
     </div>
 
+    <div id="drag-4" class="grid-item">
+      <h3 class="apiHeader">Random Stylish Picture API </h3><i class="far fa-grin-beam large"></i>
+      <img id="picture" src="https://picsum.photos/300" alt="">
+      <button class="spacing btn btn-primary" onclick="changeimage()"  type="button" name="button">Load New Picture</button>
+    </div>
 
+    <div id="drag-5" class="grid-item">
+      <h3 class="apiHeader">Spotify </h3><i class="far fa-grin-beam large"></i>
+      <iframe src="https://open.spotify.com/embed/album/6pL7kL9cOc0DpWCq6qJtxQ" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+
+    <div id="drag-6" class="grid-item">
+      <h3 class="apiHeader">Google Calendar - PNE Matches </h3><i class="far fa-grin-beam large"></i>
+      <iframe src="https://calendar.google.com/calendar/embed?src=47cbg2vgljspn09df2pd8q5mho%40group.calendar.google.com&ctz=Europe%2FLondon" style="border: 0" width="500" height="400" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <div id="drag-7" class="grid-item">
+      <h3 class="apiHeader">To-Do list</h3><i class="far fa-grin-beam large"></i>
+      <iframe src="https://www.memotoo.com/tasksEmbed.php?uid=6d6fac2acaf77d3a529e78a5f9c1c9c2&amp;q=WWYgNDeiJI4WS10baoUY24Omha7rNaOs5EkZhaZtKJpMhtpJjHfj7KfsEwbf5Y30NUOwGSYqXr+2FaaylqAbSnII6g==" width="300" height="400" style="border:0px" frameborder="0" scrolling="auto"></iframe>
+    </div>
+
+    <div id="drag-8" class="grid-item">
+      <h3 class="apiHeader">Twitter</h3><i class="far fa-grin-beam large"></i>
+      <a class="twitter-timeline" data-width="400" data-height="500" data-theme="light" href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw">Tweets by elonmusk</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div id="drag-9" class="grid-item">
+      <h3 class="apiHeader">Stocks</h3><i class="far fa-grin-beam large"></i>
+
+        <div class="tradingview-widget-container">
+          <div id="tradingview_ea73d"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+          <script type="text/javascript">
+          new TradingView.widget(
+          {
+          "width": 500,
+          "height": 300,
+          "symbol": "NYSE:AMC",
+          "interval": "D",
+          "timezone": "Etc/UTC",
+          "theme": "light",
+          "style": "2",
+          "locale": "uk",
+          "toolbar_bg": "#f1f3f6",
+          "enable_publishing": false,
+          "allow_symbol_change": true,
+          "container_id": "tradingview_ea73d"
+        }
+          );
+          </script>
+        </div>
+
+    </div>
 
 </div>
 
 
 
 <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-<script src="drag.js"></script>
+
 <script src="apis/weatherAPI.js"></script>
 <script src="apis/covidAPI.js"></script>
 <script src="apis/stocksAPI.js"></script>
+<script src="apis/pictureAPI.js"></script>
 <script src="sidebar.js"></script>
+<script src="snowstorm.js"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
-
+<script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
   </body>
 
-
+<script src="draggable.js"></script>
 
 
   </html>
