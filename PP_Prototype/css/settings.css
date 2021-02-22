@@ -1,0 +1,35 @@
+.settingscontainer{
+  float: left;
+  background-color: green;
+  margin: 20px 40px;
+  padding: 15px 15px;
+  height: 80%;
+  width: 40%;
+  text-align: left;
+  position: relative;
+}
+
+.settingclose{
+  padding: 15px 20px;
+  font-size: 40px;
+  float: right;
+  color: red;
+}
+
+.submitsettings{
+  position: absolute;
+  bottom: 20px;
+}
+
+#WeatherSettings{
+  position: fixed;
+  top: 15%;
+  left: 25%;
+  width: 60%;
+  height: 60%;
+  background-color: rgba(51, 51, 51);
+  z-index: 2;
+  text-align: center;
+  color: white;
+  display: none;
+}

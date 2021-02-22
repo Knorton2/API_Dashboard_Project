@@ -18,6 +18,7 @@
 function turnoffsnow() {
   var x = document.getElementById("drag-3");
 	var y = document.getElementById("jokeToggle");
+  x.style.display === "none") {
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {

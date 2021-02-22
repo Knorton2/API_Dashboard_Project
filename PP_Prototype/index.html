@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>API Prototyping</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/settings.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -13,9 +14,12 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <script src="draggable.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
-    <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.js"></script>
+    <script src="packery.js"></script>
+
+
+
 
   </head>
 
@@ -27,6 +31,17 @@
       <div id="WeatherSettings">
         <i onmouseover="" style="cursor: pointer;" onclick="WeatherSettingsClose()" class="fa fa-times settingclose" aria-hidden="true"></i>
         <h1>Weather Settings</h1>
+        <div class="settingscontainer">
+          <h3>edit</h3>
+          <label for="LocationSettings">Location Select</label>
+          <select id="LocationSettings" name="location">
+            <option value="London">London</option>
+            <option value="Spain">Spain</option>
+            <option value="New York" selected>New York</option>
+            <option value="France">France</option>
+          </select>
+          <input onclick="saveweather()" id="weathersubmit" class="submitsettings" type="submit" name="" value="Save Changes">
+        </div>
       </div>
 
 
@@ -144,7 +159,7 @@
 
     <div id="drag-5" class="grid-item">
       <h3 class="apiHeader">Spotify </h3><i class="far fa-grin-beam large"></i>
-      <iframe src="https://open.spotify.com/embed/album/6pL7kL9cOc0DpWCq6qJtxQ" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <iframe src="https://open.spotify.com/embed/album/6pL7kL9cOc0DpWCq6qJtxQ" width="310" height="450" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
 
     <div id="drag-6" class="grid-item">
