@@ -128,6 +128,31 @@ body{
   width: 600px;
 }
 
+#settingscontainer{
+  position: absolute;
+  text-align: center;
+}
+
+#WeatherSettings{
+  position: fixed;
+  top: 15%;
+  left: 25%;
+  width: 60%;
+  height: 60%;
+  background-color: rgba(51, 51, 51);
+  z-index: 2;
+  text-align: center;
+  color: white;
+  display: none;
+}
+
+.settingclose{
+  padding: 15px 20px;
+  font-size: 40px;
+  float: right;
+  color: red;
+}
+
 .xmasbg{
   background-image: url("xmasbg.png");
   border-radius: 7px;
@@ -145,6 +170,11 @@ body{
 .large{
   font-size: 62px;
   float:right;
+}
+
+.settings{
+  float: right;
+
 }
 
 

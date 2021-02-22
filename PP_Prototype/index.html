@@ -23,16 +23,27 @@
 
   <body>
 
+
+      <div id="WeatherSettings">
+        <i onmouseover="" style="cursor: pointer;" onclick="WeatherSettingsClose()" class="fa fa-times settingclose" aria-hidden="true"></i>
+        <h1>Weather Settings</h1>
+      </div>
+
+
+
+
+
+
     <div class="page-wrapper chiller-theme toggled">
       <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
           <div class="sidebar-brand">
-            <h1 class="white">API Dashboard v1.5</h1>
+            <h1 class="white">API Dashboard v1.8</h1>
 
           </div>
           <div class="sidebar-header">
-            <p class="white">Verison focused on intergrating popular internet apps.</p>
-            <p class="white">Apps such as Discord, Spotify, Youtube & many more.</p>
+            <p class="white">Verison focused on creating settings.</p>
+            <p class="white">Settings should be saved on revisit.</p>
           </div>
 
           <div class="sidebar-menu">
@@ -49,30 +60,33 @@
                 <div class="sidebar-submenu">
                   <ul>
                     <li>
-                      <a id="weatherToggle" href="#" onclick="turnoffweather()">Weather API
+                      <a id="weatherToggle" href="#">Weather API<i onclick="turnoffweather()" class="fa fa-eye-slash settings" aria-hidden="true"></i><i onclick="WeatherSettingsOpen()" class="fa fa-cog settings" aria-hidden="true"></i>
 
                       </a>
                     </li>
                     <li>
-                      <a id="covidToggle" href="#" onclick="turnoffcovid()">Covid API</a>
+                      <a id="covidToggle" href="#" onclick="turnoffcovid()">Covid API<i class="fa fa-eye-slash settings" aria-hidden="true"></i><i class="fa fa-cog settings" aria-hidden="true"></i></a>
                     </li>
                     <li>
-                      <a id="jokeToggle" href="#" onclick="turnoffjoke()">Joke API</a>
+                      <a id="jokeToggle" href="#">Joke API<i onclick="turnoffjoke()" class="fa fa-eye-slash settings" aria-hidden="true"></i><i class="fa fa-cog settings" aria-hidden="true"></i></a>
                     </li>
                     <li>
-                      <a id="picToggle" href="#" onclick="turnoffpic()">Picture API</a>
+                      <a id="picToggle" href="#">Picture API<i onclick="turnoffpic()" class="fa fa-eye-slash settings" aria-hidden="true"></i><i class="fa fa-cog settings" aria-hidden="true"></i></a>
                     </li>
                     <li>
-                      <a id="spotifyToggle" href="#" onclick="turnoffspotify()">Spotify</a>
+                      <a id="spotifyToggle" href="#">Spotify<i onclick="turnoffspotify()" class="fa fa-eye-slash settings" aria-hidden="true"></i><i class="fa fa-cog settings" aria-hidden="true"></i></a>
                     </li>
                     <li>
-                      <a id="twitterToggle" href="#" onclick="turnofftwitter()">Twitter</a>
+                      <a id="twitterToggle" href="#">Twitter<i onclick="turnofftwitter()" class="fa fa-eye-slash settings" aria-hidden="true"></i><i class="fa fa-cog settings" aria-hidden="true"></i></a>
                     </li>
                     <li>
-                      <a id="ToDoToggle" href="#" onclick="turnofftodo()">To-Do list</a>
+                      <a id="ToDoToggle" href="#">To-Do list<i onclick="turnofftodo()" class="fa fa-eye-slash settings" aria-hidden="true"></i><i class="fa fa-cog settings" aria-hidden="true"></i></a>
                     </li>
                     <li>
-                      <a id="calendarToggle" href="#" onclick="turnoffcalendar()">Football Calendar</a>
+                      <a id="calendarToggle" href="#" onclick="turnoffcalendar()">FB Calendar<i class="fa fa-eye-slash settings" aria-hidden="true"></i><i class="fa fa-cog settings" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                      <a id="StocksToggle" href="#" onclick="turnofftodo()">Stocks<i class="fa fa-eye-slash settings" aria-hidden="true"></i><i onclick="WeatherSettingsOpen()" class="fa fa-cog settings" aria-hidden="true"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -82,12 +96,7 @@
                 <span>Extra</span>
               </li>
 
-              <li>
-                <a target="_blank" href="https://github.com/Knorton2/API_Dashboard_Project">
-                  <i class="fa fa-calendar"></i>
-                  <span>GitHub Repository</span>
-                </a>
-              </li>
+
               <li>
                 <a class="xmasbg" onclick="snowStorm.toggleSnow()" href="#">
                   <i class="fas fa-snowflake"></i>
@@ -185,6 +194,8 @@
 
 
 
+
+
 <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
 <script src="apis/weatherAPI.js"></script>
@@ -193,6 +204,7 @@
 <script src="apis/pictureAPI.js"></script>
 <script src="sidebar.js"></script>
 <script src="snowstorm.js"></script>
+<script src="js/settings.js"></script>
 
 
 
