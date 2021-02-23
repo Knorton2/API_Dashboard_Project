@@ -22,20 +22,31 @@ function getCookie(name) {
     return null;
 }
 
+var weatherD = getCookie("weatherD");
+
+if (weatherD == "visible"){
+  document.getElementById("drag-1").style.display = "block";
+} else if (weatherD == "hidden") {
+  document.getElementById("drag-1").style.display = "none";
+}
+
+
+
 var loc = getCookie("location");
 
+
 if (loc == "France") {
-  var long = "46.800700";
-	var lang = "2.385995";
+  var long = "46.2276";
+	var lang = "2.2137";
 } else if (loc == "London") {
-	var long = "53.783927";
-	var lang = "-2.892869";
-} else if (loc == "New York") {
-	var long = "40.711948";
-	var lang = "-74.003237";
-} else {
-	var long = "39.420494";
-	var lang = "-3.316792";
+	var long = "51.3917662";
+	var lang = "-0.2907196";
+} else if (loc == "New_York") {
+	var long = "40.7128";
+	var lang = "74.0060";
+} else if (loc == "Spain") {
+	var long = "40.4637";
+	var lang = "3.7492";
 }
 
 fetch("https://dark-sky.p.rapidapi.com/"+long+","+lang+"?lang=en&units=auto", {
@@ -57,12 +68,15 @@ fetch("https://dark-sky.p.rapidapi.com/"+long+","+lang+"?lang=en&units=auto", {
 
 
 function turnoffweather() {
+  var weatherD;
   var x = document.getElementById("drag-1");
 	var y = document.getElementById("weatherToggle");
   if (x.style.display === "none") {
     x.style.display = "block";
+    document.cookie = "weatherD=visible; expires=Thu, 18 Dec 2022 12:00:00 UTC; path=/";
   } else {
     x.style.display = "none";
+    document.cookie = "weatherD=hidden; expires=Thu, 18 Dec 2022 12:00:00 UTC; path=/";
   }
 
 	if (x.style.display === "none") {
@@ -70,7 +84,6 @@ function turnoffweather() {
 	} else {
 		y.style.color = "#66ff69";
 	}
-	console.log("test");
 }
 
 function saveweather() {

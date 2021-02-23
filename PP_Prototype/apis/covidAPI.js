@@ -1,3 +1,36 @@
+function getCookie(name) {
+    // Split cookie string and get all individual name=value pairs in an array
+    var cookieArr = document.cookie.split(";");
+
+    // Loop through the array elements
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+
+        /* Removing whitespace at the beginning of the cookie name
+        and compare it with the given string */
+        if(name == cookiePair[0].trim()) {
+            // Decode the cookie value and return
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+
+    // Return null if not found
+    return null;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var covidD = getCookie("covidD");
+
+if (covidD == "visible"){
+  document.getElementById("drag-2").style.display = "block";
+} else if (covidD == "hidden") {
+  document.getElementById("drag-2").style.display = "none";
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 fetch("https://covid-19-v1.p.rapidapi.com/v1/all", {
 	"method": "GET",
 	"headers": {
@@ -16,8 +49,10 @@ function turnoffcovid() {
 	var y = document.getElementById("covidToggle");
   if (x.style.display === "none") {
     x.style.display = "block";
+		document.cookie = "covidD=visible; expires=Thu, 22 Dec 2022 12:00:00 UTC; path=/";
   } else {
     x.style.display = "none";
+		document.cookie = "covidD=hidden; expires=Thu, 22 Dec 2022 12:00:00 UTC; path=/";
   }
 
 	if (x.style.display === "none") {
